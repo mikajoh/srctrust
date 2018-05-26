@@ -1,8 +1,8 @@
-### Research compendium for "srctrust" by Magnus Hoem Iversen, Mikael Poul Johannesson, and Erik Knudsen.
-
 [![Travis-CI Build Status](https://travis-ci.org/mikajoh/srctrust.svg?branch=master)](https://travis-ci.org/mikajoh/srctrust)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/mikajoh/srctrust?branch=master&svg=true)](https://ci.appveyor.com/project/mikajoh/srctrust)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mikajoh/srctrust/master/LICENSE)
+
+### Research compendium for "srctrust" by Magnus Hoem Iversen, Mikael Poul Johannesson, and Erik Knudsen.
 
 This work in progress.
 
@@ -29,4 +29,4 @@ In addition, it includes:
 
 ----
 
-*Note: the raw data is freely available for researchers via [NSD](http://www.nsd.uib.no/nsddata/serier/norsk_medborgerpanel_eng.html)
+*Note: the raw data is freely available for researchers via [NSD](http://www.nsd.uib.no/nsddata/serier/norsk_medborgerpanel_eng.html).*
