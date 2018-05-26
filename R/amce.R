@@ -25,7 +25,7 @@
 #' @param subset Subset to estimate AMCEs for.
 #' @keywords AMCE
 #' @examples
-#'\dontrun{
+#' \dontrun{
 #'  amce <- amce(data, post, treatment_1, treatment_2)
 #' }
 #' @export
@@ -184,13 +184,16 @@ amce <- function(data, post, ...,
   return(res)
 }
 
-
+#' @importFrom stats as.formula lm na.omit
+#' @importFrom broom tidy
+#' @importFrom sandwich estfun sandwich
+#' @importFrom lmtest coeftest
 estimator_regression <- function(formula, data,
                                  cluster = NULL,
                                  weights = NULL) {
 
   if (is.character(formula)) formula <- as.formula(formula)
-
+  
   all_vars <- all.vars(formula)
   if (!is.null(cluster)) all_vars <- c(all_vars, cluster)
   if (!is.null(weights)) all_vars <- c(all_vars, weights)

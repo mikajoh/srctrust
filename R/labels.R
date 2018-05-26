@@ -73,15 +73,16 @@ val_labs <- function() {
 #' @export
 treat_labs <- function() {
   tribble(
-    ~treatment,        ~treatment_label,
-    "src_adds",        "Advertisement", 
-    "src_comments",    "Comment field",
-    "src_established", "Established",
-    "src_ethics",      "Ethical violations",
-    "src_party",       "Party endorsement",
-    "src_readers",     "Size of readership",
-    "src_soft",        "Entertainment news",
-    "src_status",      "Current distribution format"
+    ~treatment,          ~treatment_label,
+    "src_adds",          "Advertisement", 
+    "src_comments",      "Comment field",
+    "src_established",   "Established",
+    "src_ethics",        "Ethical violations",
+    "src_party",         "Party endorsement",
+    "src_readers",       "Size of readership",
+    "src_soft",          "Entertainment news",
+    "src_status",        "Current distribution format",
+    "src_party_matched", "Matched party endorsement"
   )  
 }
 

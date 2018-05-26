@@ -42,15 +42,15 @@ trust_01 <-
     rsp_pol_int = case_when(
       r8k1 %in% 1:5 ~ 6 - as.numeric(r8k1)),
     rsp_pol_party = case_when(
-      r8k204 == 1 ~ "krf",
-      r8k204 == 2 ~ "h",
-      r8k204 == 3 ~ "frp",
-      r8k204 == 4 ~ "v",
-      r8k204 == 5 ~ "sv",
-      r8k204 == 6 ~ "sp",
-      r8k204 == 7 ~ "mdg",
-      r8k204 == 8 ~ "ap",
-      r8k204 == 9 ~ "red"),
+      r8k204 == 1 ~ "Christian Democratic Party",
+      r8k204 == 2 ~ "Conservative Party",
+      r8k204 == 3 ~ "Progress Party",
+      r8k204 == 4 ~ "Liberal Party",
+      r8k204 == 5 ~ "Socialist Left Party",
+      r8k204 == 6 ~ "Agrarian Party",
+      r8k204 == 7 ~ "Green Party",
+      r8k204 == 8 ~ "Social Democratic Party",
+      r8k204 == 9 ~ "Red Party"),
     rsp_pol_scale = case_when(
       r8k8_1 %in% 1:11 ~ as.numeric(r8k8_1)),
     rsp_pol_side = case_when(
@@ -121,17 +121,21 @@ trust_03 <-
     exp_post = ifelse(r8pad2 %in% 1:2, r8pad2, NA),
     src_post = case_when(
       exp_post == src_n ~ 1,
-      exp_post != src_n ~ 0)
+      exp_post != src_n ~ 0),
+    src_party_matched = case_when(
+      src_party == "No party"    ~ "No party endorsed",
+      src_party == rsp_pol_party ~ "Endorses prefered party",
+      src_party != rsp_pol_party ~ "Does not endorse prefered party"),
   ) %>%
   select(matches("rsp_"), matches("exp_"), matches("src_")) %>%
   filter(!is.na(src_post))
 
-trust <- trust_03
+trust_raw <- trust_03
 
 ## Write data to file ------------------------------------------------
 
 write.csv(
-  x = trust,
+  x = trust_raw,
   file = here("data", "trust.csv"),
   row.names = FALSE
 )
