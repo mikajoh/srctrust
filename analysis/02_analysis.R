@@ -21,6 +21,8 @@ trust_raw <- read.csv(
   stringsAsFactors = FALSE
 )
 
+## We want the treatments values to have a specific order in the
+## figures.
 trust <- 
   trust_raw %>%
   mutate(
@@ -78,7 +80,7 @@ fig_main
 
 ggsave2(fig_main, "fig_main", width = 7, height = 5)
 
-## Matched party effects ---------------------------------------------
+## Party effects -----------------------------------------------------
 
 res_prty <-
   trust %>%
