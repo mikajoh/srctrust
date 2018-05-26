@@ -2,3 +2,4 @@
 analysis
 ^\.travis\.yml$
 ^Dockerfile$
+^appveyor\.yml$
