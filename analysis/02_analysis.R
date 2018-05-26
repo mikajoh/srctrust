@@ -11,6 +11,8 @@ if (!require(srctrust)) {
   devtools::install_github("mikajoh/srctrust")
 }
 
+set.seed(2018)
+
 ## Get the data ------------------------------------------------------
 
 ## Prepared data from The Norwegian Citizen Panel (Wave 8).
@@ -312,6 +314,5 @@ fig_sub_polside <-
   ) +
   theme_m()
 fig_sub_polside
-
 
 ggsave2(fig_sub_polside, "fig_sub_polside", width = 12, height = 5)
