@@ -13,5 +13,7 @@ Imports: bookdown,
     sandwich,
     lmtest,
     tidyselect,
-    rlang
+    rlang,
+    ggplot2,
+    here
 RoxygenNote: 6.0.1
